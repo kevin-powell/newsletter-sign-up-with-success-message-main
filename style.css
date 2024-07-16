@@ -1,0 +1,227 @@
+@font-face {
+  font-family: 'Roboto';
+  src: 
+    local('Roboto Regular'),
+    url('/assets/fonts/Roboto-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: 
+    local('Roboto Bold'),
+    url('/assets/fonts/Roboto-Bold.ttf');
+  font-weight: 700;
+}
+
+:root {
+  --clr-neutral-800: hsl(234, 29%, 20%);
+  --clr-neutral-700: hsl(235, 18%, 26%);
+  --clr-neutral-200: hsl(231, 7%, 60%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
+  --clr-accent-400: hsl(4, 100%, 67%);
+  --clr-accent-500: hsl(347, 100%, 66%);
+
+  --ff-base: Roboto, sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --fs-300: .825rem;
+  --fs-400: 1rem;
+  --fs-900: 2.5rem;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff-base);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-regular);
+  color: var(--clr-neutral-800);
+  line-height: 1.5;
+
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: var(--clr-neutral-800);
+}
+
+input {
+  padding: 1rem;
+  border-radius: .5rem;
+  font: inherit;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-regular);
+  border: 1px solid var(--clr-neutral-200);
+}
+
+input::placeholder {
+  color:  var(--clr-neutral-200);
+}
+
+input:not(:focus):invalid {
+  color: var(--clr-accent-400);
+  border: 1px solid var(--clr-accent-400);
+}
+
+input:not(:focus):invalid {
+  color: var(--clr-accent-400);
+  border: 1px solid var(--clr-accent-400);
+}
+
+.form-group {
+  display: grid;
+  gap: .5rem;
+  font-size: var(--fs-300);
+  font-weight: var(--fw-bold);
+}
+
+.form-group > .error {
+  grid-row: 1;
+  grid-column: 2;
+  text-align: end;
+  color: var(--clr-accent-400);
+  display: none;
+}
+
+.form-group > :not(:focus):invalid + .error {
+  display: block;
+}
+
+.form-group.with-error-field {
+  grid-template-columns: 1fr 1fr;
+}
+
+.form-group.with-error-field > input {
+  grid-column: 1 / -1;
+}
+
+
+
+
+.button {
+  background: var(--clr-neutral-800);
+  color: var(--clr-neutral-100);
+  font: inherit;
+  font-weight: var(--fw-bold);
+  border: 0;
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+.button:hover,
+.button:focus-visible {
+  position: relative;
+  background-image: linear-gradient(-90deg,
+    var(--clr-accent-400),
+    var(--clr-accent-500)
+  );
+}
+
+form {
+  isolation: isolate;
+}
+
+.button:hover::after,
+.button:focus-visible::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: inherit;
+  border-radius: inherit;
+  translate: 0 1.5rem;
+  filter: blur(1rem);
+  opacity: .5;
+}
+
+.checkmark-list {
+  display: grid;
+  gap: .625rem;
+}
+
+.checkmark-list li {
+  display: grid;
+  grid-template-columns: 2.5rem auto;
+}
+
+.checkmark-list li::before {
+  content: url('/assets/images/icon-list.svg');
+}
+
+.newsletter-cta {
+  max-width: 850px;
+  border-radius: 1rem;
+  background-color: var(--clr-neutral-100);
+}
+
+@media (min-width: 650px) {
+  .newsletter-cta {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr .75fr;
+    padding: 2rem;
+    margin-inline: 1rem;
+    border-radius: 1rem;
+  }
+
+  .newsletter-cta > .content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+.newsletter-cta > .content {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.newsletter-cta .title {
+  font-size: var(--fs-900);
+  font-weight: var(--fw-bold);
+}
+
+.newsletter-cta img {
+  margin-inline: auto;
+}
+
+.newsletter-cta form {
+  margin-block-start: 1.25rem;
+  display: grid;
+  gap: 1.5rem;
+}

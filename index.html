@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <div class="newsletter-cta">
+    <picture>
+      <source 
+        media="(min-width: 650px)"
+        srcset="assets/images/illustration-sign-up-desktop.svg"
+      >
+      <img src="assets/images/illustration-sign-up-mobile.svg" alt="">
+    </picture>
+    <div class="content">
+      
+      <h1 class="title">Stay updated!</h1>
+      <p>Join 60,000+ product managers receiving monthly updates on:</p>
+      <ul role="list" class="checkmark-list">
+        <li>Product discovery and building what matters</li>
+        <li>Measuring to ensure updates are a success</li>
+        <li>And much more!</li>
+      </ul>
+      <form>
+        <div class="form-group with-error-field">
+          <label for="email">Email address</label>
+          <input placeholder="email@company.com" type="email" id="email">
+          <span class="error">Email address required</span>
+        </div>
+        <button class="button">Subscribe to monthly newsletter</button>
+      </form>
+    </div>
+
+  </div>
+
+
+</body>
+</html>
